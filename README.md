@@ -7,6 +7,7 @@
 > 2. Nadia Faraj Alyafaatin Simbolon (123450092)
 > 3. Arini Puteri Elandra (123450069)
 > 4. Muhammad Naufal Al Ghani (123450116)
+> 
 > **Implementasi:** K-Means Clustering & Linear Regression Terdistribusi Kelompok 27 SDG 7 - Energi Bersih dan Terjangkau
 
 ---
