@@ -377,11 +377,11 @@ docker exec -it abd-spark-master /opt/spark/bin/spark-submit \
 
    | Parameter | Nilai |
    |-----------|-------|
-   | HOST | `postgres` |
-   | PORT | `5432` |
-   | DATABASE NAME | `energy_db` |
-   | USERNAME | `superset` |
-   | PASSWORD | `superset_password` |
+   | Host | `postgres` |
+   | Port | `5432` |
+   | Database Name | `energy_db` |
+   | Username | `superset` |
+   | Password | `superset_password` |
 
 5. Klik **`CONNECT`**
 
