@@ -83,7 +83,7 @@ Pastikan file sudah muncul di folder Drive dan tidak ada tanda error (ikon merah
 
 ---
 
-## 🔗 Link Cepat
+## 🔗 Link Folder
 
 - [📁 Folder Bronze](https://drive.google.com/drive/folders/1q0G1ilWHSDhEG34NxQLz3dEsjfnPjkiC?usp=drive_link)
 - [📁 Folder Silver](https://drive.google.com/drive/folders/1bR4WZyEthNfmfx4m4v5sfFdLWljUWLF9?usp=drive_link)
