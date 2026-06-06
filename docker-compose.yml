@@ -1,0 +1,72 @@
+services:
+  # Master Node Komputasi Spark (Resmi Apache)
+  spark-master:
+    image: apache/spark:3.5.0
+    container_name: abd-spark-master
+    user: root
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - .:/opt/bitnami/spark/app
+    networks:
+      - abd-network
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+
+  # Worker Node Komputasi Spark (Resmi Apache)
+  spark-worker:
+    image: apache/spark:3.5.0
+    container_name: abd-spark-worker
+    user: root
+    depends_on:
+      - spark-master
+    volumes:
+      - .:/opt/bitnami/spark/app
+    networks:
+      - abd-network
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+  # Relational Data Warehouse backend (PostgreSQL)
+  postgres:
+    image: postgres:15
+    container_name: abd-postgres
+    environment:
+      - POSTGRES_USER=superset
+      - POSTGRES_PASSWORD=superset_password
+      - POSTGRES_DB=energy_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_energy:/var/lib/postgresql/data
+    networks:
+      - abd-network
+
+  # Business Intelligence Visualisation Layer (Apache Superset)
+  superset:
+    image: apache/superset:3.1.0
+    container_name: abd-superset
+    depends_on:
+      - postgres
+    environment:
+      - SUPERSET_SECRET_KEY=itera-sainsdata-abd-secret-key-2026
+      - DATABASE_URL=postgresql+psycopg2://superset:superset_password@postgres:5432/energy_db
+    ports:
+      - "8089:8088"
+    networks:
+      - abd-network
+    command: >
+      bash -c "
+      superset db upgrade &&
+      superset fab create-admin --username admin --firstname Admin --lastname User --email admin@example.com --password admin_password &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088
+      "
+
+volumes:
+  pgdata_energy:
+
+networks:
+  abd-network:
+    driver: bridge
