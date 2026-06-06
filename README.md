@@ -532,4 +532,4 @@ Untuk keluar dari Spark Shell:
 
 ---
 
-*Tugas Besar — Arsitektur Big Data | Institut Teknologi Sumatera (ITERA)*
+*Tugas Besar — Analisis Big Data | Institut Teknologi Sumatera (ITERA)* _|_ _Kelompok 27_
