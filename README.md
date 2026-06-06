@@ -1,7 +1,7 @@
 # Dashboard Analisis Konsumsi Energi Rumah Tangga
 ## Berbasis Medallion Architecture & Apache Spark MLlib
 
-> **Mata Kuliah:** Arsitektur Big Data (ABD)  
+> **Mata Kuliah:** Analisis Big Data (ABD)  
 > **Penyusun:** 
 > 1. Efi Defiyati (123450005)
 > 2. Nadia Faraj Alyafaatin Simbolon (123450092)
